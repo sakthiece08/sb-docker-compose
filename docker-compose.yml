@@ -1,0 +1,20 @@
+version: '3.4'
+services:
+ db:
+  image: mysql
+  ports:
+   - '3306:3306'
+  restart: always
+  volumes:
+   - mysql-data:/var/lib/mysql
+  environment:
+   MYSQL_ROOT_PASSWORD: my_sec_password
+   MYSQL_DATABASE: product_db
+   MYSQL_USER: mysql
+   MYSQL_PASSWORD: mysql_password
+volumes:
+  mysql-data:
+    driver: local
+   
+   
+  
