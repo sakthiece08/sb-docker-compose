@@ -23,10 +23,13 @@ public class Application {
 	@Bean
 	CommandLineRunner commandLineRunner(ProductRepository repository) {
 		return arg -> {
-			List<Product> list = List.of(Product.builder().name("Macbook").quantity(10).build(),
-					Product.builder().name("Appliance").quantity(2).build());
-			repository.saveAll(list);
-			log.info("Product list has been persisted {}", list);
+			if (0 == repository.findAll().size()) {
+				List<Product> list = List.of(Product.builder().name("Macbook").quantity(10).build(),
+						Product.builder().name("Frigidaire").quantity(2).build());
+				repository.saveAll(list);
+				log.info("Default product list has been persisted!");
+			} else
+				log.info("Default product list is already available!");
 		};
 	}
 
