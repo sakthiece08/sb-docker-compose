@@ -19,6 +19,6 @@ Database: mysql
 - No need to explicitly run docker compose up commands to pick up the configurations from Docker compose file
 - Local Docker Daemon should be running 
 
-Please refer to this blog for more details:
+Please refer to my blog for more details:
 
 https://medium.com/@Teqmonic/spring-boot-3-1-docker-compose-1d75876309d6
