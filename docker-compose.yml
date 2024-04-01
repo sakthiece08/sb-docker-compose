@@ -2,6 +2,7 @@ version: '3.4'
 services:
  db:
   image: mysql
+  container_name: sb-docker-compose-container
   ports:
    - '3306:3306'
   restart: always
